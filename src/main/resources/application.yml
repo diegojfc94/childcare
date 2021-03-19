@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: childcare
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://mysql-db:3306/childcare
+    username: test
+    password: pass_test
+
+server:
+  port: 8008

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/childcare.css" />
+<title>Horas compartidas</title>
+</head>
+<body>
+	<div class="jumbotron min-vh-100 m-0 d-flex flex-column justify-content-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="row">
+						<div class="col-8">
+							<h1>Horas compartidas</h1>
+						</div>
+						<div class="col-2">
+							<button id="btnNewCarer" type="button" class="btn btn-link float-right">
+								Añadir persona
+							</button>
+						</div>
+						<div class="col-2">
+							<button id="btnNewMeeting" type="button" class="btn btn-link float-right">
+								Añadir cuidado
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<br>
+					<p>Cuidados:</p>
+					<div id="meetings-content"></div>
+					<br>
+				</div>
+				<div class="col-12">
+					<br>
+					<p>Balance:</p>
+					<div id="balance-content"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal-new-carer-->
+	<div class="modal fade" id="modalNewCarer" role="dialog" tabindex="-1" aria-labelledby="modalNewCarerLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalNewCarerLabel">Registro de padre/madre</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group">
+					  <input type="text" class="form-control" placeholder="First name" id="carer-first-name">
+					  <br>
+					  <input type="text" class="form-control" placeholder="Last name" id="carer-last-name">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success pull-right" onclick="postCarer()">Guardar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal-new-meeting  Pte. de realizar -->    
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="js/childcare.js"></script>
+</body>
+</html>

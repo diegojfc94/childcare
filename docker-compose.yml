@@ -1,0 +1,36 @@
+version: '3.6'
+services:
+
+  mysql-db:
+    container_name: mysql-db
+    restart: always
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=childcare
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=pass_test
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./sql/childcare_mysql.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - childcare-network
+      
+  childcare:
+    container_name: childcare-app
+    restart: always
+    image: childcare
+    build: ./
+    ports:
+      - "8008:8008"
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/childcare
+      SPRING_DATASOURCE_USERNAME: test
+      SPRING_DATASOURCE_PASSWORD: pass_test
+    networks:
+      - childcare-network
+
+networks:
+    childcare-network:
+        driver: bridge
