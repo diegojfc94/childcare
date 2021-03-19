@@ -11,7 +11,7 @@ Technical test for EI (Energia Independiente)
 
 + Clone repo: `git clone git@github.com:diegojfc94/childcare.git`
 + Get with your CLI to the directory: `cd childcare`
-+ Compile sources: `gradle compileJava`
++ Compile sources: `gradle build`
 
 ### Test
 
